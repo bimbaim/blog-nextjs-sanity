@@ -41,7 +41,6 @@ export const postBySlugQuery = groq`
 
 /*
 *[_type == 'category'] {
-  ...,
   "posts": *[_type == 'post' && references(^._id)]
 }
 */
