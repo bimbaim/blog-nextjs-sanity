@@ -38,6 +38,13 @@ export const postBySlugQuery = groq`
 *[_type == "post" && slug.current == $slug][0] {
   ${postFields}
 }
+
+/*
+*[_type == 'category'] {
+  ...,
+  "posts": *[_type == 'post' && references(^._id)]
+}
+*/
 `
 
 export interface Author {
